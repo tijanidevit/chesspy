@@ -1,0 +1,65 @@
+{% extends "layout/app.html" %}
+{% block scripts %}
+    <head>
+        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+        <link rel="stylesheet" href="{{ url_for('static', filename='libs/chessboard/css/chessboard-0.3.0.css') }}"></link>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='rook_favicon.ico') }}">
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+        <script type="text/javascript"> $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; </script>
+        <script type="text/javascript" src="{{ url_for('static',filename='libs/chessboard/js/chessboard-0.3.0.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static',filename='libs/chessboard/js/chessboard-0.3.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static',filename='scripts.js') }}"></script>
+    </head>
+
+{% endblock %}
+
+
+
+{% block content %}
+        <div class="container" style="padding-top: 6em">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div id="mainWindow">
+                        <div id="piecesB"></div>
+                        <div id="board"></div>
+                        <div id="piecesW"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div id="secondWindow">
+                        <h3><span id="status">White to move</span></h3>
+                        <div id="moveTable">
+                            <table class="table table-striped table-condensed" id="pgn">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>White</th>
+                                        <th>Black</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div id="controls">
+                            <form class="form-inline">
+                                <button type="button" class="btn btn-default" id="backBtn" onclick="takeBack()";>Take Back</button>
+                                <button type="button" class="btn btn-default" id="reset" onclick="newGame()";>New Game</button>
+                                <select class="form-control" id="sel1">
+                                    <option value="5">Level: 5</option>
+                                    <option value="4">Level: 4</option>
+                                    <option value="3">Level: 3</option>
+                                    <option value="2">Level: 2</option>
+                                    <option value="1">Level: 1</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

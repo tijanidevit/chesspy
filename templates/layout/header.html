@@ -1,0 +1,67 @@
+<!-- Loading -->
+<div id="pq-loading">
+  <div id="pq-loading-center">
+    <img
+      src="{{ url_for('static', filename='chess/chess2.avif')}}"
+      alt="loading"
+    />
+  </div>
+</div>
+<!-- Loading -->
+
+<!-- Header -->
+<header id="pq-header" class="pq-header-style-1 pq-has-sticky">
+  <div class="pq-bottom-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="./">
+              <img
+                class="img-fluid logo"
+                src="{{ url_for('static', filename='chess/chess2.avif')}}"
+                alt="xcloud"
+              />
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div id="pq-menu-contain" class="pq-menu-contain">
+                <ul id="pq-main-menu" class="navbar-nav ml-auto">
+                  <li
+                    class="menu-item current-menu-item menu-item-has-children"
+                  >
+                    <a href="./">Home</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="about">About</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="play">Play Game</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pq-btn-container">
+              <div class="pq-button-block">
+                <a href="play" class="pq-button pq-button-flat">
+                  <span class="pq-button-text">play now </span>
+                </a>
+              </div>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header -->
